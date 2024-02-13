@@ -1,0 +1,29 @@
+{
+  "manifest_version": 2,
+  "name": "MoodleSessionExtender",
+  "version": "1.0",
+  "description": "Автоматически нажимает кнопку 'Продлить сессию' на сайте Moodle, чтобы предотвратить автоматическое выключение аккаунта из-за неактивности.",
+  "default_locale": "en",
+  "icons": {
+    "16": "./img/icons/extension/16.png",
+    "32": "./img/icons/extension/32.png",
+    "48": "./img/icons/extension/48.png",
+    "64": "./img/icons/extension/64.png",
+    "128": "./img/icons/extension/128.png"
+  },
+  "permissions": [
+    "activeTab",
+    "background",
+    "tabs"
+  ],
+  "background": {
+    "scripts": ["./js/background.js"],
+    "persistent": false
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://moodle.att.edu.ru/*"],
+      "js": ["./js/app.js"]
+    }
+  ]
+}
